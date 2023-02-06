@@ -19,8 +19,6 @@ const Header = ({search, onSearch}) => {
 
     const handleChange = (e) => {
         console.log(e);
-        onSearch(e.target.value);
-
     }
 
     return(
