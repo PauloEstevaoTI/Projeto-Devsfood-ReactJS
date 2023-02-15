@@ -12,13 +12,13 @@ const Header = ({search, onSearch}) => {
     
     const handleInputBlur = () => {
         if(search === ''){
-            setInputActive(false);
+            setInputActive(false);  
         }
         
     }
 
     const handleChange = (e) => {
-        console.log(e);
+        return onSearch(e.target.value);
     }
 
     return(

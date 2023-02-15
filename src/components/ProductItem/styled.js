@@ -22,6 +22,7 @@ export const ProductPhotoArea = styled.div`
 export const ProductPhoto = styled.img `
     width: 100%;
     border-radius: 10px;
+    
 `
 
 export const ProductInfoArea = styled.div `
