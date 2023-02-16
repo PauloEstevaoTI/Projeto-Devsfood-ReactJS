@@ -1,5 +1,6 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 import { 
     Container,
@@ -21,7 +22,12 @@ import {
 
 const ModalProduct = ({ setStatus, data}) => {   
     
+    const dispatch = useDispatch();
     const [qtd, setQtd] = useState(1);
+
+    useEffect(()=> {
+        setQtd(1);
+    },[data])
       
     const handleAddProduct = () => {
         setQtd(qtd + 1);
@@ -35,8 +41,19 @@ const ModalProduct = ({ setStatus, data}) => {
     }
 
     const handleCloseModal = () => {
-        setQtd(0);
+        // setQtd(1);
         setStatus(false)
+    }
+
+    const handleAddToCart = () => {
+        
+        dispatch({
+            type: 'ADD_PRODUCT',
+            payload:{ data, qtd }
+        })
+        
+
+        setStatus(false);
     }
 
     return(
@@ -55,14 +72,14 @@ const ModalProduct = ({ setStatus, data}) => {
                             <ProductQtImage onClick={handleAddProduct} src="/assets/plus.png" />
                         </ProductQuantity>
                         <ProductPrice>
-                            R$ {data.price * qtd}
+                            R$ {(data.price * qtd).toFixed(2)}
                         </ProductPrice>
                     </ProductQuantityArea>
                 </ProductInfoArea>
             </ProductArea>
             <ProductButtons>
                 <ProductButton onClick={handleCloseModal} small={true} >Cancelar</ProductButton>
-                <ProductButton>Adicionar ao Carrinho</ProductButton>
+                <ProductButton onClick={handleAddToCart}>Adicionar ao Carrinho</ProductButton>
             </ProductButtons>
         </Container>
     )
