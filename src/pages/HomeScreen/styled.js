@@ -35,7 +35,12 @@ export const ProductList = styled.div`
 export const ProductPaginationArea = styled.div `
     display: flex;
     flex-wrap: wrap;
-    margin-top: 20px;
+    
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    bottom: 80px;
+
 `
 
 export const ProductPaginationItem = styled.div `

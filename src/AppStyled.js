@@ -23,4 +23,5 @@ export const PageBody = styled.div `
     background-image: url('/assets/bg.png');
     flex: 1;
     overflow-y: auto;
+    position: relative;
 `
