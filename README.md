@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Este projeto foi feito em aula do curso [B7Web]
 
+# Home:
+
+![home](https://user-images.githubusercontent.com/53940439/219899876-8a755e7d-a68b-4b6d-aa1b-c37dfd7c68a8.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
